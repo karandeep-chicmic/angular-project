@@ -1,11 +1,33 @@
-.body-image {
-    display: block;
-    margin: 0 auto;
-    text-align: center;
-    margin-top: 50px;
-  }
-img {
-    height: 300px;
-    width: auto;
+:host {
+  font-style: italic;
 }
-  
+.body-image {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+  margin-top: 50px;
+  padding: 10px 30px;
+}
+img {
+  height: 300px;
+  width: auto;
+}
+
+button {
+  padding: 10px 10px;
+  margin: 2px 5px;
+}
+
+.cartBtn {
+  display: flex;
+  justify-content: center;
+}
+.btnShowNHide{
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+}
+.array{
+  display: flex;
+  justify-content: center;
+}
