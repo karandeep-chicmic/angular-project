@@ -8,18 +8,18 @@ import { Component } from '@angular/core';
 export class SearchBarComponent {
   searchContent: any = 0;
 
-  changeSearch(event: any) {
-    let x = Number(event.target.value.replaceAll(',', ''));
-    if (isNaN(x)) {
-      event.target.value = 0;
-      this.searchContent = 0;
-      return;
-    }
+  // changeSearch(event: any) {
+  //   let x = Number(event.target.value.replaceAll(',', ''));
+  //   if (isNaN(x)) {
+  //     event.target.value = 0;
+  //     this.searchContent = 0;
+  //     return;
+  //   }
 
-    var e = x.toLocaleString();
+  //   var e = x.toLocaleString();
 
-    this.searchContent = e;
-  }
+  //   this.searchContent = e;
+  // }
 
   searchBtn() {
     alert(this.searchContent);

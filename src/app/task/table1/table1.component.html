@@ -1,3 +1,4 @@
+<app-search (search)="search($event)" ngModel="search"></app-search>
 <div class="tables">
   <table class="styled-table">
     <thead>
@@ -9,12 +10,15 @@
       </tr>
     </thead>
     <tbody>
-      <tr class="active-row" *ngFor="let user of user; let i = index">
+      <tr
+        class="active-row"
+        *ngFor="let user of !flag ? user : newUser; let i = index"
+      >
         <td>{{ user.name }}</td>
         <td>{{ user.email }}</td>
         <td>{{ user.age }}</td>
         <td>
-          <button type="button" (click)="delUser(i)">Delete</button>
+          <button type="button" (click)="delUser(user.id)">Delete</button>
         </td>
       </tr>
       <!-- <button (click)="getusers()">show</button> -->
@@ -22,5 +26,5 @@
     </tbody>
   </table>
 
-  <app-table2  [delArr]="delArr" (reviveUser)="reviveUser($event)" ></app-table2>
+  <app-table2 [delArr]="delArr" (reviveUser)="reviveUser($event)"></app-table2>
 </div>

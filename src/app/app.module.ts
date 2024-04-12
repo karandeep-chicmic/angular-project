@@ -14,6 +14,7 @@ import { TaskComponent } from './task/task.component';
 import { Table1Component } from './task/table1/table1.component';
 import { Table2Component } from './task/table2/table2.component';
 import { FormComponent } from './task/form/form.component';
+import { SearchComponent } from './task/search/search.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { FormComponent } from './task/form/form.component';
     Table1Component,
     Table2Component,
     FormComponent,
+    SearchComponent,
   ],
   imports: [BrowserModule, FormsModule],
   providers: [],

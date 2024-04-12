@@ -1,38 +1,50 @@
-<div class="">
-  <br /><br />
-  <label>Form </label><br /><br />
-  <label>Name : </label>
-  <input type="text" name="name" [(ngModel)]="objUser.name" /><br /><br />
-  <label>Password : </label>
-  <input
-    type="password"
-    name="password"
-    [(ngModel)]="objUser.password"
-  /><br /><br />
-  <label>Email : </label>
-  <input
-    type="email"
-    value="email"
-    name="email"
-    [(ngModel)]="objUser.email"
-  /><br /><br />
-  <label>Age : </label>
-  <input
-    type="number"
-    value="age"
-    name="age"
-    [(ngModel)]="objUser.age"
-  /><br /><br /><br />
-  <button (click)="addUserBtn()">Add User</button>
-  <!-- <div *ngFor="let i of user">
-    {{ i.name }}
-    {{ i.email }}
-    {{ i.age }}
-  </div> -->
+<div class="container">
+  <h2>Form</h2>
+  <form>
+    <div class="form-group">
+      <label for="name">Name:</label>
+      <input
+        type="text"
+        id="name"
+        name="name"
+        [(ngModel)]="objUser.name"
+        required
+      />
+    </div>
+    <div class="form-group">
+      <label for="password">Password:</label>
+      <input
+        type="password"
+        id="password"
+        name="password"
+        [(ngModel)]="objUser.password"
+        required
+      />
+    </div>
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        [(ngModel)]="objUser.email"
+        required
+      />
+    </div>
+    <div class="form-group">
+      <label for="age">Age:</label>
+      <input
+        type="number"
+        id="age"
+        name="age"
+        [(ngModel)]="objUser.age"
+        required
+      />
+    </div>
+    <button type="button" (click)="addUserBtn()">Add User</button>
+  </form>
 </div>
-
 
 <div class="tables">
   <app-table1 [user]="user"></app-table1>
-  
 </div>

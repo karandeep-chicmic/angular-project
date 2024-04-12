@@ -1,9 +1,6 @@
 <div class="search-container">
   <div class="search-input">
     <input type="text" [(ngModel)]="searchContent" />
-    <button>Search</button>
+    <button (click)="searchBtn()">Search</button>
   </div>
-</div>
-<div class="search-results">
-  Search Results for : <strong>{{ searchContent }}</strong>
 </div>
