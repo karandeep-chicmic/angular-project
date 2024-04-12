@@ -1,42 +1,7 @@
 <div class="">
-  <!-- <div class="btnShowNHide">
-    <button *ngIf="!showProduct" (click)="showProductBtn()">
-      Show Product
-    </button>
-    <button *ngIf="showProduct" (click)="showProductBtn()">Hide Product</button>
-  </div> -->
-
-  <app-search-bar></app-search-bar>
-
-  <!-- <div class="body-image" *ngIf="showProduct">
-    <img [src]="obj.imgUrl" alt="temp" />
-    <p>Name : {{ obj.name }}</p>
-    <p>Price : {{ obj.price }}</p>
-    <p>Color : {{ obj.color }}</p>
-    <p>
-      Stock : {{ obj.stock <= 0 ? "Not in Stock" : obj.stock + " items left" }}
-    </p>
-    <p>Discount : {{ getDiscount() }}</p>
-    <button [disabled]="!(obj.stock > 0)">Buy Items</button><br /><br />
-    <div class="cartBtn">
-      <button (click)="minus()" [disabled]="cart == 0">-</button>
-      <p>{{ cart }}</p>
-      <button (click)="add()" [disabled]="cart == obj.stock">+</button>
-    </div>
-
-    <section class="admin-controls" *ngIf="hasAdminPrivileges">
-      The content you are looking for is here.
-    </section>
+  <app-search-bar ></app-search-bar>
+  <app-filter [all] = "allProds" [inStock]="inStock" [outStock]="outStock"></app-filter>
+  <div class="product-container">
+    <app-product *ngFor="let prod of products" [product]="prod"></app-product>
   </div>
-  <div *ngIf="!showProduct"  class="array">
-    <p *ngFor="let i of [1, 2, 3, 4, 5]">
-      {{i}} 
-    </p>
-  </div> -->
-
-  <!-- <div *ngFor="let i of arr; let index = index">
-    <p>{{ index }}</p>
-  </div> -->
-  
-  <app-product></app-product>
 </div>

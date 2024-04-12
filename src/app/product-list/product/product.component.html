@@ -1,17 +1,21 @@
-<!-- <div class="product-container">
-  <div *ngIf="flag" class="product-grid">
-    <ng-container *ngFor="let product of products">
-      <div *ngIf="product.availability" class="product-card">
-        <img [src]="product.imgSrc" alt="Product Image" class="product-image" />
-        <div class="product-details">
-          <p class="product-name">{{ product.name }}</p>
-          <p class="product-price">
-            {{ product.discountedPrice }}
-            <span class="original-price">{{ product.price }}</span>
-          </p>
-          <p class="discount">{{ calculateDiscount(product) }}% Discount</p>
-        </div>
+<div *ngIf="flag" class="product-grid">
+  <ng-container>
+    <div class="product-card">
+      <img [src]="product.imgSrc" alt="Product Image" class="product-image" />
+      <div class="product-details">
+        <p class="product-name">{{ product.name }}</p>
+        <p class="product-price">
+          {{ product.discountedPrice }}
+          <span class="original-price">{{ product.price }}</span>
+        </p>
+        <p class="discount">{{ calculateDiscount(product) }}% Discount</p>
+        <p
+          class="availability"
+          [ngStyle]="{ color: !product.availability ? 'red' : 'green' }"
+        >
+          {{ product.availability ? "Available" : "Not in Stock" }}
+        </p>
       </div>
-    </ng-container>
-  </div>
-</div> -->
+    </div>
+  </ng-container>
+</div>

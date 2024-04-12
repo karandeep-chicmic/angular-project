@@ -1,0 +1,26 @@
+<div class="tables">
+  <table class="styled-table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>email</th>
+        <th>age</th>
+        <th>Buttons</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="active-row" *ngFor="let user of user; let i = index">
+        <td>{{ user.name }}</td>
+        <td>{{ user.email }}</td>
+        <td>{{ user.age }}</td>
+        <td>
+          <button type="button" (click)="delUser(i)">Delete</button>
+        </td>
+      </tr>
+      <!-- <button (click)="getusers()">show</button> -->
+      <!-- and so on... -->
+    </tbody>
+  </table>
+
+  <app-table2  [delArr]="delArr" (reviveUser)="reviveUser($event)" ></app-table2>
+</div>

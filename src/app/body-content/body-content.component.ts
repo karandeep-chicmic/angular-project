@@ -18,7 +18,7 @@ export class BodyContentComponent {
       discountedPrice: 70,
       imgSrc:
         'https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8c2hvZXN8ZW58MHx8MHx8fDA%3D',
-      availability: 10,
+      availability: 0,
     },
     {
       id: 2,
@@ -36,7 +36,7 @@ export class BodyContentComponent {
       discountedPrice: 90,
       imgSrc:
         'https://images.unsplash.com/photo-1595341888016-a392ef81b7de?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fHNob2VzfGVufDB8fDB8fHww',
-      availability: 5,
+      availability: 0,
     },
     {
       id: 4,

@@ -1,0 +1,23 @@
+<table class="styled-table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>email</th>
+      <th>age</th>
+      <th>Buttons</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="active-row" *ngFor="let d of delArr; let i = index">
+      <td>{{ d.name }}</td>
+      <td>{{ d.email }}</td>
+      <td>{{ d.age }}</td>
+      <td>
+        <button type="button" class="" data-id="1" (click)="reviveVal(i)">
+          Revive
+        </button>
+      </td>
+    </tr>
+    
+  </tbody>
+</table>

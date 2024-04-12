@@ -1,0 +1,38 @@
+<div class="">
+  <br /><br />
+  <label>Form </label><br /><br />
+  <label>Name : </label>
+  <input type="text" name="name" [(ngModel)]="objUser.name" /><br /><br />
+  <label>Password : </label>
+  <input
+    type="password"
+    name="password"
+    [(ngModel)]="objUser.password"
+  /><br /><br />
+  <label>Email : </label>
+  <input
+    type="email"
+    value="email"
+    name="email"
+    [(ngModel)]="objUser.email"
+  /><br /><br />
+  <label>Age : </label>
+  <input
+    type="number"
+    value="age"
+    name="age"
+    [(ngModel)]="objUser.age"
+  /><br /><br /><br />
+  <button (click)="addUserBtn()">Add User</button>
+  <!-- <div *ngFor="let i of user">
+    {{ i.name }}
+    {{ i.email }}
+    {{ i.age }}
+  </div> -->
+</div>
+
+
+<div class="tables">
+  <app-table1 [user]="user"></app-table1>
+  
+</div>
