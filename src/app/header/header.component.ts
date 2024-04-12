@@ -3,6 +3,7 @@ interface ButtonItem {
   name: string;
   ref: string;
 }
+
 @Component({
   selector: 'header',
   templateUrl: './header.component.html',

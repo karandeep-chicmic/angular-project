@@ -7,6 +7,8 @@ import { BodyContentComponent } from './body-content/body-content.component';
 import { ProductListComponent } from './product-list/product-list.component';
 import { SearchBarComponent } from './product-list/search-bar/search-bar.component';
 import { FormsModule } from '@angular/forms';
+import { TodoComponent } from './todo/todo.component';
+import { ProductComponent } from './product-list/product/product.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +17,8 @@ import { FormsModule } from '@angular/forms';
     ProductListComponent,
     SearchBarComponent,
     AppComponent,
+    TodoComponent,
+    ProductComponent,
   ],
   imports: [BrowserModule, FormsModule],
   providers: [],

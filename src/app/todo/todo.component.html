@@ -1,0 +1,54 @@
+<div class="container">
+  <div class="form">
+    <p>Todo Application!</p>
+  </div>
+  <p>
+    <input
+      type="text"
+      placeholder="Task"
+      name="taskName"
+      [(ngModel)]="newTask.name"
+      required
+    />
+  </p>
+  <p>
+    <select name="choice" [(ngModel)]="newTask.status" required>
+      <option value="true">Active</option>
+      <option value="false" selected>Not Active</option>
+    </select>
+  </p>
+  <p>
+    <textarea
+      name="textarea"
+      rows="5"
+      placeholder="Write something here"
+      [(ngModel)]="newTask.description"
+      required
+    ></textarea>
+  </p>
+  
+
+  <button [disabled]="!temp()" type="submit" (click)="addTaskFunc()">
+    {{ !flag.val ? "Add Task" : "Update Task" }}
+  </button>
+  <button class="deleteBtn" *ngIf="flag.val" (click)="closeFun()">Close</button>
+</div>
+<div class="allTasks">
+  <table>
+    <thead>
+      <th>Name</th>
+      <th>status</th>
+      <th>description</th>
+      <th>Buttons</th>
+    </thead>
+    <tr *ngFor="let i of tasks; index as idx">
+      <th>{{ i.name }}</th>
+      <th>{{ i.status ? "Active" : "Not Active" }}</th>
+      <th>{{ i.description }}</th>
+      <th>
+        <button (click)="updateTask(idx)" class="updateBtn">Update</button>
+        <button (click)="deleteTask(idx)" class="deleteBtn">Delete</button>
+      </th>
+    </tr>
+  </table>
+</div>

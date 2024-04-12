@@ -1,9 +1,9 @@
 <div class="search-container">
-  <div class="search-input" >
+  <div class="search-input">
     <input type="text" [value]="searchContent" (input)="changeSearch($event)" />
     <button>Search</button>
   </div>
-  <div class="search-results">
-    Results : <strong>{{ searchContent }}</strong>
-  </div>
+</div>
+<div class="search-results">
+  Search Results for : <strong>{{ searchContent }}</strong>
 </div>
