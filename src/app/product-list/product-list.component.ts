@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Product } from '../Models/Product';
 
 @Component({
   selector: 'product-list',
@@ -6,42 +7,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./product-list.component.css'],
 })
 export class ProductListComponent {
-  // cart: number = 0;
-  // flag: boolean = true;
-  // hasAdminPrivileges: boolean = false;
-  // showProduct: boolean = false;
-  // arr: number[] = [11, 2, 3, 4, 5, 6];
+  selectedProduct: Product;
 
-  // obj = {
-  //   name: 'Iphone 13',
-  //   price: 20000000,
-  //   color: 'Black',
-  //   discount: 10,
-  //   stock: 10,
-  //   imgUrl: '/assets/image1.png',
-  // };
-  // add() {
-  //   if (this.cart >= this.obj.stock) {
-  //     return false;
-  //   } else {
-  //     this.cart++;
-  //     return true;
-  //   }
-  // }
-  // minus() {
-  //   if (this.cart <= 0) {
-  //     return false;
-  //   } else {
-  //     this.cart--;
-  //     return true;
-  //   }
-  // }
-  // getDiscount() {
-  //   return this.obj.price - (this.obj.price * this.obj.discount) / 100;
-  // }
-  // showProductBtn() {
-  //   this.showProduct = !this.showProduct;
-  // }
+  @Input()
   products: any[] = [
     {
       id: 1,
@@ -135,8 +103,11 @@ export class ProductListComponent {
     },
   ];
 
+  @Input() searchItem: string = '';
+
   allProds = this.products.length;
-  inStock = this.products.filter((v) => v.availability > 0).length;
-  outStock = this.products.filter((v) => v.availability === 0 || Boolean(v.availability) === false)
-    .length;
+  inStock = this.products.filter((v) => v.availability).length;
+  outStock = this.products.filter(
+    (v) => v.availability === 0 || Boolean(v.availability) === false
+  ).length;
 }

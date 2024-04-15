@@ -1,7 +1,14 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import {
+  Component,
+  Input,
+  Output,
+  EventEmitter,
+  ChangeDetectionStrategy,
+} from '@angular/core';
+import { Table1Component } from '../table1/table1.component';
 
 interface u {
-  id:number,
+  id: number;
   name: string;
   password: string;
   email: string;
@@ -20,8 +27,8 @@ export class Table2Component {
   @Output() reviveUser: EventEmitter<any> = new EventEmitter();
 
   temp: u = { id: 0, name: '', password: '', email: '', age: 0 };
- 
-  reviveVal(i) {
+
+  reviveVal(i: number) {
     this.temp = { ...this.delArr[i] };
     this.reviveUser.emit(this.temp);
 

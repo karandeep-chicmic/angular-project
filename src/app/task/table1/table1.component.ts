@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 interface u {
   id: number;
   name: string;
@@ -12,7 +12,9 @@ interface u {
   templateUrl: './table1.component.html',
   styleUrls: ['./table1.component.css'],
 })
-export class Table1Component {
+export class Table1Component implements OnInit {
+  count: number = 0;
+
   @Input()
   user: u[];
 
@@ -21,6 +23,11 @@ export class Table1Component {
   newUser: u[];
 
   flag: boolean = false;
+
+  ngOnChanges() {
+    this.count++;
+  }
+
   ngOnInit(): void {
     this.user = [
       ...this.user.sort(function (a, b) {
@@ -28,6 +35,7 @@ export class Table1Component {
       }),
     ];
   }
+
   delUser(i: number) {
     const userFin = this.user.find((x) => x.id === i);
     const t = { ...userFin };
@@ -40,7 +48,13 @@ export class Table1Component {
 
   reviveUser(data: u) {
     const temp = { ...data };
+
     this.user.push(temp);
+    this.user = [
+      ...this.user.sort(function (a, b) {
+        return a.name > b.name ? 1 : -1;
+      }),
+    ];
   }
 
   search(ev: any) {

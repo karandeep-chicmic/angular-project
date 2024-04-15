@@ -1,4 +1,10 @@
-import { Component } from '@angular/core';
+import {
+  Component,
+  Output,
+  EventEmitter,
+  ViewChild,
+  ElementRef,
+} from '@angular/core';
 
 @Component({
   selector: 'app-search-bar',
@@ -6,22 +12,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./search-bar.component.css'],
 })
 export class SearchBarComponent {
-  searchContent: any = 0;
+  searchContent: any = '';
+  @Output() searchTerm = new EventEmitter<string>();
 
-  // changeSearch(event: any) {
-  //   let x = Number(event.target.value.replaceAll(',', ''));
-  //   if (isNaN(x)) {
-  //     event.target.value = 0;
-  //     this.searchContent = 0;
-  //     return;
-  //   }
+  @ViewChild('searchInput') searchInput: ElementRef;
 
-  //   var e = x.toLocaleString();
-
-  //   this.searchContent = e;
-  // }
-
-  searchBtn() {
-    alert(this.searchContent);
+  constructor() {}
+  updateSearch() {
+    this.searchContent = this.searchInput.nativeElement.value;
+    this.searchTerm.emit(this.searchInput.nativeElement.value);
   }
 }

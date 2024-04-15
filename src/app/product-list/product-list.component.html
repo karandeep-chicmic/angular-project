@@ -1,7 +1,15 @@
 <div class="">
-  <app-search-bar ></app-search-bar>
-  <app-filter [all] = "allProds" [inStock]="inStock" [outStock]="outStock"></app-filter>
+  <app-filter
+    [all]="allProds"
+    [inStock]="inStock"
+    [outStock]="outStock"
+  ></app-filter>
   <div class="product-container">
-    <app-product *ngFor="let prod of products" [product]="prod"></app-product>
+    <div *ngFor="let prod of products" (click)="selectedProduct = prod">
+      <app-product
+        *ngIf="prod.name.toLowerCase().includes(searchItem)"
+        [product]="prod"
+      ></app-product>
+    </div>
   </div>
 </div>

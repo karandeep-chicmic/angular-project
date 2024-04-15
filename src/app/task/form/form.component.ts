@@ -81,8 +81,20 @@ export class FormComponent {
     ];
   }
   objUser: u = { id: 0, name: '', password: '', email: '', age: 0 };
-
+  valid: boolean = true;
+  formVal() {
+    this.valid = !this.valid;
+  }
   addUserBtn() {
+    if (
+      this.objUser.name === '' ||
+      this.objUser.password === '' ||
+      this.objUser.email === ''
+    ) {
+      this.valid = false;
+      return;
+    }
+    this.valid = true;
     const obj: u = { ...this.objUser };
     obj.id = this.count;
     this.user.push(obj);
