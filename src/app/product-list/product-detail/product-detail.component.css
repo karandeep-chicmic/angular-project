@@ -1,0 +1,66 @@
+/* styles.css */
+
+.product {
+  display: block;
+  justify-content: center;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+  margin-top: 10px;
+  background-color: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+img{
+  width: 300px;
+  height: auto;
+}
+.product-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.product-name {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.product-price,
+.product-discounted-price {
+  font-size: 16px;
+  color: #888;
+  margin-bottom: 5px;
+}
+
+.product-discounted-price {
+  color: #e74c3c; /* Red color for discounted price */
+}
+
+.btnCart {
+  margin-top: 20px;
+  justify-content: center;
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btnCart:hover {
+  background-color: #2980b9;
+}
+
+/* Responsive styling for smaller screens */
+@media (max-width: 768px) {
+  .product {
+    padding: 15px;
+  }
+}

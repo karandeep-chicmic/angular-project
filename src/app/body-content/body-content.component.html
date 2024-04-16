@@ -9,7 +9,7 @@
   <div *ngIf="flag" class="product-grid">
     <ng-container *ngFor="let product of products">
       <div class="product-card">
-        <img [src]="product.imgSrc" alt="Product Image" class="product-image" />
+        <img [src]="product.imgSrc" alt="Product" class="product-image" />
         <div class="product-details">
           <p class="product-name">{{ product.name }}</p>
           <p class="product-price">

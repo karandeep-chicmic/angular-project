@@ -1,7 +1,6 @@
 <app-search (search)="search($event)"></app-search>
 <div class="tables">
   <table class="styled-table">
-    <span>{{ count }}</span>
     <thead>
       <tr>
         <th>Name</th>
@@ -22,8 +21,6 @@
           <button type="button" (click)="delUser(user.id)">Delete</button>
         </td>
       </tr>
-      <!-- <button (click)="getusers()">show</button> -->
-      <!-- and so on... -->
     </tbody>
   </table>
 

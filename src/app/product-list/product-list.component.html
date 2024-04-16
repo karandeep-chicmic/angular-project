@@ -1,15 +1,29 @@
 <div class="">
+  <!-- filter component sending all the input value of all, instock, outstock (only length NO FILTER as of now )-->
   <app-filter
+    *ngIf="!flag"
     [all]="allProds"
     [inStock]="inStock"
     [outStock]="outStock"
   ></app-filter>
-  <div class="product-container">
-    <div *ngFor="let prod of products" (click)="selectedProduct = prod">
+
+  <!-- for loop over all the products, flag is used to show one product or more products-->
+  <div class="product-container" *ngIf="!flag">
+    <div *ngFor="let prod of products" (click)="selectTheProd(prod)">
       <app-product
         *ngIf="prod.name.toLowerCase().includes(searchItem)"
         [product]="prod"
       ></app-product>
     </div>
   </div>
+
+  <!-- btn to reverse the value of flag so as to display all products again -->
+  <button
+    class="btnBackToAllProds"
+    buttonHover
+    *ngIf="flag"
+    (click)="backToAllProds()"
+  >
+    Back to All Products
+  </button>
 </div>

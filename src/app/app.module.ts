@@ -16,6 +16,11 @@ import { Table2Component } from './task/table2/table2.component';
 import { FormComponent } from './task/form/form.component';
 import { SearchComponent } from './task/search/search.component';
 import { ProductDetailComponent } from './product-list/product-detail/product-detail.component';
+import { SetBackground } from './CustomDirectives/SetBackground.directive';
+import { HighlightDirective } from './CustomDirectives/highlight.directive';
+import { ButtonHoverSkipTestsDirective } from './CustomDirectives/button-hover--skip-tests.directive';
+import { DisableProductDirective } from './CustomDirectives/disable-product.directive';
+import { InputOnlyStringDirective } from './CustomDirectives/input-only-string.directive';
 
 @NgModule({
   declarations: [
@@ -33,6 +38,11 @@ import { ProductDetailComponent } from './product-list/product-detail/product-de
     FormComponent,
     SearchComponent,
     ProductDetailComponent,
+    SetBackground,
+    HighlightDirective,
+    ButtonHoverSkipTestsDirective,
+    DisableProductDirective,
+    InputOnlyStringDirective,
   ],
   imports: [BrowserModule, FormsModule],
   providers: [],

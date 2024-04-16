@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 interface u {
   id: number;
   name: string;
@@ -12,21 +12,16 @@ interface u {
   templateUrl: './table1.component.html',
   styleUrls: ['./table1.component.css'],
 })
-export class Table1Component implements OnInit {
-  count: number = 0;
+export class Table1Component implements OnInit,OnChanges {
+  
 
-  @Input()
-  user: u[];
+  @Input() user: u[];
 
   delArr: u[] = [];
-
   newUser: u[];
-
   flag: boolean = false;
 
-  ngOnChanges() {
-    this.count++;
-  }
+ 
 
   ngOnInit(): void {
     this.user = [
@@ -34,6 +29,11 @@ export class Table1Component implements OnInit {
         return a.name > b.name ? 1 : -1;
       }),
     ];
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    console.log("called");
+    
   }
 
   delUser(i: number) {

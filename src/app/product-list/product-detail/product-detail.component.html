@@ -1,1 +1,7 @@
-<p>{{product.name}}</p>
+<div class="product">
+  <img class="product-image" src="{{ product.imgSrc }}" alt="Product Image" />
+  <p class="product-name">{{ product.name }}</p>
+  <p class="product-discounted-price">{{ product.discountedPrice }}</p>
+  <p class="product-price">{{ product.price }}</p>
+  <button class="btnCart">Add to Cart</button>
+</div>

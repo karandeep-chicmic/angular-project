@@ -21,8 +21,7 @@ interface u {
   styleUrls: ['./table2.component.css'],
 })
 export class Table2Component {
-  @Input()
-  delArr: u[] = [];
+  @Input() delArr: u[] = [];
 
   @Output() reviveUser: EventEmitter<any> = new EventEmitter();
 

@@ -8,9 +8,10 @@ import { Product } from '../Models/Product';
 })
 export class ProductListComponent {
   selectedProduct: Product;
+  flag: boolean = false;
 
-  @Input()
-  products: any[] = [
+  @Output() productSelected = new EventEmitter<Product>();
+  @Input() products: any[] = [
     {
       id: 1,
       name: 'Nike Running Shoes',
@@ -110,4 +111,14 @@ export class ProductListComponent {
   outStock = this.products.filter(
     (v) => v.availability === 0 || Boolean(v.availability) === false
   ).length;
+
+  selectTheProd(val: Product) {
+    this.selectedProduct = val;
+    this.flag = true;
+  }
+
+  backToAllProds() {
+    this.flag = !this.flag;
+    this.selectedProduct = null;
+  }
 }

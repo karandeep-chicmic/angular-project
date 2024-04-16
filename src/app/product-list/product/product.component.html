@@ -1,8 +1,8 @@
-<div class="product-grid">
+<div class="product-grid" [disableProduct] ="!(product.availability>0)">
   <ng-container>
-    <div class="product-card">
-      <img [src]="product.imgSrc" alt="Product Image" class="product-image" />
+    <div  class="product-card" appHighlight>
       <div class="product-details">
+        <img appHighlight [src]="product.imgSrc" alt="ProductImage" class="product-image" />
         <p class="product-name">{{ product.name }}</p>
         <p class="product-price">
           {{ product.discountedPrice }}
