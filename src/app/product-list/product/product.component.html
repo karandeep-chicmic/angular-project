@@ -1,14 +1,24 @@
-<div class="product-grid" [disableProduct] ="!(product.availability>0)">
+<div class="product-grid" [disableProduct]="!(product.availability > 0)">
   <ng-container>
-    <div  class="product-card" appHighlight>
+    <div class="product-card" appHighlight>
       <div class="product-details">
-        <img appHighlight [src]="product.imgSrc" alt="ProductImage" class="product-image" />
+        <img
+          appHighlight
+          [src]="product.imgSrc"
+          alt="ProductImage"
+          class="product-image"
+        />
         <p class="product-name">{{ product.name }}</p>
         <p class="product-price">
           {{ product.discountedPrice }}
           <span class="original-price">{{ product.price }}</span>
         </p>
-        <p class="discount">{{ calculateDiscount(product) }}% Discount</p>
+        <p class="discount">
+          {{
+            product.price
+              | calculateDiscount : product.discountedPrice
+          }}% Discount
+        </p>
         <p
           class="availability"
           [ngStyle]="{ color: !product.availability ? 'red' : 'green' }"

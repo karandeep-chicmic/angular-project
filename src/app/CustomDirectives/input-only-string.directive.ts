@@ -1,19 +1,33 @@
-//  Directive for a input consisting only string type and no other types exp(numbers, special characters) 
+//  Directive for a input consisting only string type and no other types exp(numbers, special characters)
 import { Directive, ElementRef, HostListener, Renderer2 } from '@angular/core';
 
 @Directive({
   selector: '[appInputOnlyString]',
 })
 export class InputOnlyStringDirective {
-  regexStr = '^[a-zA-Z ]+$';
-  constructor(private element: ElementRef, private render: Renderer2) {}
+  // Regex for only string type
+  regexStr = '^[a-zA-Z ]*$';
+  constructor(private element: ElementRef) {}
 
-  @HostListener('keypress', ['$event']) onInputChange(event: any) {
-    return new RegExp(this.regexStr).test(event.key);
+  //  HostListener for keypress and paste event
+
+  @HostListener('keypress', ['$event']) onInputChange(event: KeyboardEvent) {
+    const inputValue: string = this.element.nativeElement.value;
+
+    // if (!new RegExp(this.regexStr).test(inputValue)) {
+    //   this.element.nativeElement.value = inputValue
+    //     .replace(/[^a-zA-Z ]/g, '')
+    //     .replace(/\s/g, '');
+    // }
+    console.log(inputValue);
+
+    return new RegExp(this.regexStr).test(inputValue + event.key);
   }
   @HostListener('paste', ['$event']) blockPaste(event: ClipboardEvent) {
     this.validateFields(event);
   }
+
+  //  Function for validate fields (basically for )
   validateFields(event: ClipboardEvent) {
     event.preventDefault();
 
@@ -21,7 +35,7 @@ export class InputOnlyStringDirective {
     if (clipboardData) {
       const pastedText = clipboardData
         .getData('text/plain')
-        .replace(/[^a-zA-Z]/g, '');
+        .replace(/[^a-zA-Z ]/g, '');
 
       const selection = window.getSelection();
       if (selection) {

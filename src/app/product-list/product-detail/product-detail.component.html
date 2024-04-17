@@ -1,7 +1,10 @@
-<div class="product">
+<div class="product" [disableProduct]="!(product.availability > 0)">
   <img class="product-image" src="{{ product.imgSrc }}" alt="Product Image" />
   <p class="product-name">{{ product.name }}</p>
   <p class="product-discounted-price">{{ product.discountedPrice }}</p>
   <p class="product-price">{{ product.price }}</p>
-  <button class="btnCart">Add to Cart</button>
+  <button *ngIf="product.availability > 0" class="btnCart">Add to Cart</button>
+  <button *ngIf="product.availability == 0" [disabled]="true">
+    Not in Stock
+  </button>
 </div>

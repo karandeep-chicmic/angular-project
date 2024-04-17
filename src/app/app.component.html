@@ -9,6 +9,17 @@
   [productListComp]="productListDetail"
 ></app-product-detail>
 
+<div>
+  <div *ngFor="let i of names | filter">
+    <span>{{ i }}</span>
+    <button (click)="namesPush()">push</button>
+  </div>
+</div>
+
+<div class="" *appIf="true">fhjdbvfdhjbvkjdfhbvkjgfkjbkdfjskbkfek njdkbvnbkjbkjnljnk</div>
+
+<!-- <ng-container *ngTemplateOutlet="nameRef"></ng-container> -->
+
 <!-- <body-content></body-content>  -->
 <!-- <app-todo></app-todo> -->
 

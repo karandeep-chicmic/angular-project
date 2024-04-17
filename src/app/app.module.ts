@@ -21,6 +21,10 @@ import { HighlightDirective } from './CustomDirectives/highlight.directive';
 import { ButtonHoverSkipTestsDirective } from './CustomDirectives/button-hover--skip-tests.directive';
 import { DisableProductDirective } from './CustomDirectives/disable-product.directive';
 import { InputOnlyStringDirective } from './CustomDirectives/input-only-string.directive';
+import { CardNoDirective } from './CustomDirectives/card-no.directive';
+import { CalculateDiscountPipe } from './CustomPipes/calculate-discount.pipe';
+import { FilterPipe } from './CustomPipes/filter.pipe';
+import { IfDirective } from './CustomDirectives/if.directive';
 
 @NgModule({
   declarations: [
@@ -43,6 +47,10 @@ import { InputOnlyStringDirective } from './CustomDirectives/input-only-string.d
     ButtonHoverSkipTestsDirective,
     DisableProductDirective,
     InputOnlyStringDirective,
+    CardNoDirective,
+    CalculateDiscountPipe,
+    FilterPipe,
+    IfDirective,
   ],
   imports: [BrowserModule, FormsModule],
   providers: [],

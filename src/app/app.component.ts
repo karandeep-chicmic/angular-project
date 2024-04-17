@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, ViewChild, ElementRef, TemplateRef } from '@angular/core';
 import { ProductListComponent } from './product-list/product-list.component';
 
 @Component({
@@ -8,11 +8,14 @@ import { ProductListComponent } from './product-list/product-list.component';
 })
 export class AppComponent {
   searchTerm: string = '';
+  names: string[] = ['alpha', 'beta', 'gamma', 'wave'];
 
   @ViewChild('productListDetail') productListDetail: ProductListComponent;
-
+  namesPush() {
+    this.names.push('vbdhjfcbvjdhb');
+    this.names = [...this.names];
+  }
   setSearchTerm(ev: string) {
-    
     this.searchTerm = ev;
   }
 }

@@ -1,9 +1,18 @@
+<!-- View Template for search bar -->
 <div class="search-container">
   <div class="search-input">
-    <input appInputOnlyString type="text" #searchInput/>
+    <input id="aadhar" appCardNo type="text" placeholder="Aadhar Number" />
+    <input id="pan" appCardNo type="text" placeholder="Pan Card Number" />
+  </div>
+  <div class="search-input">
+    <!-- used template variable below for search input-->
+    <input type="text" #searchInput />
+
     <button (click)="updateSearch()">Search</button>
   </div>
 </div>
 <div class="search-results">
   Search Results for : <strong>{{ searchContent }}</strong>
 </div>
+
+<!-- appInputOnlyString -->
