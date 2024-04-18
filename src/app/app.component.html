@@ -1,5 +1,5 @@
 <header></header>
-
+<!-- 
 <app-search-bar (searchTerm)="setSearchTerm($event)"></app-search-bar>
 
 <product-list [searchItem]="searchTerm" #productListDetail></product-list>
@@ -7,20 +7,14 @@
 <app-product-detail
   *ngIf="productListDetail.selectedProduct"
   [productListComp]="productListDetail"
-></app-product-detail>
+></app-product-detail> -->
 
-<div>
-  <div *ngFor="let i of names | filter">
-    <span>{{ i }}</span>
-    <button (click)="namesPush()">push</button>
-  </div>
-</div>
 
-<div class="" *appIf="true">fhjdbvfdhjbvkjdfhbvkjgfkjbkdfjskbkfek njdkbvnbkjbkjnljnk</div>
-
-<!-- <ng-container *ngTemplateOutlet="nameRef"></ng-container> -->
-
+<app-tester></app-tester>
 <!-- <body-content></body-content>  -->
 <!-- <app-todo></app-todo> -->
-
 <!-- <app-task> </app-task> -->
+
+
+
+

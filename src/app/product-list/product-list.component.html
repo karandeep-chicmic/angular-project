@@ -5,6 +5,7 @@
     [all]="allProds"
     [inStock]="inStock"
     [outStock]="outStock"
+    (filterChange)="handleFilterChange($event)"
   ></app-filter>
 
   <!-- for loop over all the products, flag is used to show one product or more products-->

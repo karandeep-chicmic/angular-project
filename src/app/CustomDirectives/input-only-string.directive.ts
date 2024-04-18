@@ -4,13 +4,15 @@ import { Directive, ElementRef, HostListener, Renderer2 } from '@angular/core';
 @Directive({
   selector: '[appInputOnlyString]',
 })
+
 export class InputOnlyStringDirective {
+
   // Regex for only string type
   regexStr = '^[a-zA-Z ]*$';
   constructor(private element: ElementRef) {}
 
-  //  HostListener for keypress and paste event
 
+  //  HostListener for keypress and paste event
   @HostListener('keypress', ['$event']) onInputChange(event: KeyboardEvent) {
     const inputValue: string = this.element.nativeElement.value;
 
@@ -27,7 +29,7 @@ export class InputOnlyStringDirective {
     this.validateFields(event);
   }
 
-  //  Function for validate fields (basically for )
+  //  Function for validate fields
   validateFields(event: ClipboardEvent) {
     event.preventDefault();
 

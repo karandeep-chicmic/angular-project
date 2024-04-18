@@ -1,3 +1,4 @@
+// Main Product list component
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Product } from '../Models/Product';
 
@@ -7,10 +8,14 @@ import { Product } from '../Models/Product';
   styleUrls: ['./product-list.component.css'],
 })
 export class ProductListComponent {
+  // Selected Product and flag to check if the product is selected
   selectedProduct: Product;
   flag: boolean = false;
 
+  // EventEmitter to send the selected product to the parent component
   @Output() productSelected = new EventEmitter<Product>();
+
+  // Products List
   @Input() products: any[] = [
     {
       id: 1,
@@ -104,21 +109,40 @@ export class ProductListComponent {
     },
   ];
 
+  // Original copy of products
+  originalProducts = [...this.products];
+
+  // Searched Item from search bar
   @Input() searchItem: string = '';
 
+  // For filter Component
   allProds = this.products.length;
   inStock = this.products.filter((v) => v.availability).length;
   outStock = this.products.filter(
     (v) => v.availability === 0 || Boolean(v.availability) === false
   ).length;
 
+  // For Selecting the one product for product details
   selectTheProd(val: Product) {
     this.selectedProduct = val;
     this.flag = true;
   }
 
+  // For back to all products from product details
   backToAllProds() {
     this.flag = !this.flag;
     this.selectedProduct = null;
+  }
+
+  // For Filter Component filtering on basis of event
+  handleFilterChange(event) {
+    console.log(event);
+    if (event === 'inTheStock') {
+      this.products = [...this.originalProducts.filter((v) => v.availability)];
+    } else if (event === 'outOfStock') {
+      this.products = [...this.originalProducts.filter((v) => !v.availability)];
+    } else {
+      this.products = [...this.originalProducts];
+    }
   }
 }

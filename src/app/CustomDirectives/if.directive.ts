@@ -1,3 +1,4 @@
+// "If" Directive for If condition on UI Basically like *ngIf
 import { Directive, Input, TemplateRef, ViewContainerRef } from '@angular/core';
 
 @Directive({

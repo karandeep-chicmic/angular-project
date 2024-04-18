@@ -1,0 +1,37 @@
+<!-- app For testing purposes -->
+
+<!-- using ng-template -->
+<ng-template appFor [appForOf]="names" let-item let-idx="idx">
+  <div>{{ item }} - {{ idx }}</div>
+</ng-template>
+<br />
+<!-- using *appFor -->
+<div *appFor="let item of names; let i = idx">
+  <div>{{ item }} - {{ i }}</div>
+</div>
+<br />
+
+<!-- app For Object Directive = appAppNgForObject -->
+<ng-template
+  appAppNgForObject
+  [appAppNgForObjectOf]="myObject"
+  let-item
+  let-val="val"
+>
+  <div>
+    <div *ngIf="funcObj(val)">{{ item }} - {{ val }}</div>
+    <div *ngIf="!funcObj(val)">
+      {{ item }} - {{ val.city + ", " + val.state }}
+    </div>
+  </div>
+</ng-template>
+<br />
+<div *appAppNgForObject="let item of myObject; let val = val">
+  <div *ngIf="funcObj(val)">{{ item }} - {{ val }}</div>
+  <div *ngIf="!funcObj(val)">
+    {{ item }} - {{ val.city + ", " + val.state }}
+  </div>
+</div>
+
+<!-- used service for subscribing -->
+<button class="btnTesting" (click)="subscribe('karan')">Subscribe</button>

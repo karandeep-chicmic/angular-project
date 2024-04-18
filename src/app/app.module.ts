@@ -25,6 +25,9 @@ import { CardNoDirective } from './CustomDirectives/card-no.directive';
 import { CalculateDiscountPipe } from './CustomPipes/calculate-discount.pipe';
 import { FilterPipe } from './CustomPipes/filter.pipe';
 import { IfDirective } from './CustomDirectives/if.directive';
+import { ForDirective } from './CustomDirectives/for.directive';
+import { AppNgForObjectDirective } from './CustomDirectives/app-ng-for-object.directive';
+import { TesterComponent } from './tester/tester.component';
 
 @NgModule({
   declarations: [
@@ -51,6 +54,9 @@ import { IfDirective } from './CustomDirectives/if.directive';
     CalculateDiscountPipe,
     FilterPipe,
     IfDirective,
+    ForDirective,
+    AppNgForObjectDirective,
+    TesterComponent,
   ],
   imports: [BrowserModule, FormsModule],
   providers: [],
