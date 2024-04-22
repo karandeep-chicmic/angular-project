@@ -1,42 +1,50 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
+nav {
+  background-color: #333;
+  padding: 10px 0; 
+}
 
+nav ul {
+  list-style-type: none;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
 
-  nav {
-    background-color: #333;
-    color: #fff;
-    padding: 10px;
-  }
+nav ul li {
+  display: inline-block;
+}
 
+nav ul li a {
+  color: white; 
+  text-decoration: none;
+  padding: 10px 20px; 
+}
+
+nav ul li a:hover {
+  background-color: #555; 
+}
+
+.cart-button {
+  background-color: #424e43; 
+  color: white; 
+  border: none;
+  padding: 10px 20px; 
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+.cart-button:hover{
+  background-color: #95b996;
+}
+
+@media screen and (max-width: 600px) {
   nav ul {
-    list-style: none;
-    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
   }
-
-  nav ul li {
-    display: inline-block;
-    margin-right: 20px;
-  }
-
-  nav ul li a {
-    color: #fff;
-    text-decoration: none;
-    padding: 10px 15px;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-  }
-
-  nav ul li a:hover {
-    background-color: #555;
-  }
-
-  
-  @media(max-width: 768px) {
-    nav ul li {
-      display: block;
-      margin: 10px 0;
-    }
-  }
+}

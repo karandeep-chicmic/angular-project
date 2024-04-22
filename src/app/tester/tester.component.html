@@ -1,18 +1,19 @@
 <!-- app For testing purposes -->
 
 <!-- using ng-template -->
-<ng-template appFor [appForOf]="names" let-item let-idx="idx">
-  <div>{{ item }} - {{ idx }}</div>
+<!-- <ng-template appFor [appForOf]="names" let-item let-idx="idx">
+  <div>{{ item | capitaliseInitials : "-" }} - {{ idx }}</div>
 </ng-template>
-<br />
+<br /> -->
+
 <!-- using *appFor -->
-<div *appFor="let item of names; let i = idx">
+<!-- <div *appFor="let item of names; let i = idx">
   <div>{{ item }} - {{ i }}</div>
 </div>
-<br />
+<br /> -->
 
 <!-- app For Object Directive = appAppNgForObject -->
-<ng-template
+<!-- <ng-template
   appAppNgForObject
   [appAppNgForObjectOf]="myObject"
   let-item
@@ -31,7 +32,30 @@
   <div *ngIf="!funcObj(val)">
     {{ item }} - {{ val.city + ", " + val.state }}
   </div>
-</div>
+</div> -->
 
 <!-- used service for subscribing -->
-<button class="btnTesting" (click)="subscribe('karan')">Subscribe</button>
+<!-- <button class="btnTesting" (click)="subscribe('karan')">Subscribe</button> -->
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of data; let idx = index">
+      <td>{{ item.name }}</td>
+      <td>{{ item.type }}</td>
+      <td>
+        <div>
+          <span [ngStyle]="{ color: (item.status | arrFormat).style }">
+            {{ (item.status | arrFormat).value | uppercase }}
+          </span>
+        </div>
+      </td>
+    </tr>
+  </tbody>
+</table>

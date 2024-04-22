@@ -1,6 +1,7 @@
 // Main Product list component
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter, inject } from '@angular/core';
 import { Product } from '../Models/Product';
+import { showCartService } from '../Services/showCart.service';
 
 @Component({
   selector: 'product-list',
@@ -112,6 +113,9 @@ export class ProductListComponent {
   // Original copy of products
   originalProducts = [...this.products];
 
+  // Service access
+  showCart = inject(showCartService);
+
   // Searched Item from search bar
   @Input() searchItem: string = '';
 
@@ -132,6 +136,7 @@ export class ProductListComponent {
   backToAllProds() {
     this.flag = !this.flag;
     this.selectedProduct = null;
+    this.showCart.showCart = false;
   }
 
   // For Filter Component filtering on basis of event

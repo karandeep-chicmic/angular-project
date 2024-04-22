@@ -13,6 +13,8 @@ import {
 })
 export class SearchBarComponent {
   searchContent: any = '';
+  name = 10;
+
   @Output() searchTerm = new EventEmitter<string>();
 
   @ViewChild('searchInput') searchInput: ElementRef;

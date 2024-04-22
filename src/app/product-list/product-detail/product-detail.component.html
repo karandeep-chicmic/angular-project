@@ -3,7 +3,7 @@
   <p class="product-name">{{ product.name }}</p>
   <p class="product-discounted-price">{{ product.discountedPrice }}</p>
   <p class="product-price">{{ product.price }}</p>
-  <button *ngIf="product.availability > 0" class="btnCart">Add to Cart</button>
+  <button *ngIf="product.availability > 0" class="btnCart" (click)="addToCart(product)">Add to Cart</button>
   <button *ngIf="product.availability == 0" [disabled]="true">
     Not in Stock
   </button>

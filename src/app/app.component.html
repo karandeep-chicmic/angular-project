@@ -1,20 +1,33 @@
+<!-- Navbar For The Application -->
 <header></header>
-<!-- 
-<app-search-bar (searchTerm)="setSearchTerm($event)"></app-search-bar>
 
-<product-list [searchItem]="searchTerm" #productListDetail></product-list>
+<!-- SearchBar That will search the item in the products -->
+<app-search-bar
+  *ngIf="flag"
+  (searchTerm)="setSearchTerm($event)"
+></app-search-bar>
 
-<app-product-detail
-  *ngIf="productListDetail.selectedProduct"
-  [productListComp]="productListDetail"
-></app-product-detail> -->
+<!-- Product List Component -->
 
+<product-list
+  *ngIf="flag"
+  [searchItem]="searchTerm"
+  #productListDetail
+></product-list>
 
-<app-tester></app-tester>
+<!-- Product Detail Component -->
+<div class="" *ngIf="flag">
+  <app-product-detail
+    *ngIf="(productListDetail?.selectedProduct)"
+    [productListComp]="productListDetail"
+  ></app-product-detail>
+</div>
+<!-- Cart Component for cart details from Local Storage -->
+<app-cart *ngIf="!flag"></app-cart>
+
+<!-- Components for testing purposes -->
+
+<!-- <app-tester></app-tester> -->
 <!-- <body-content></body-content>  -->
 <!-- <app-todo></app-todo> -->
 <!-- <app-task> </app-task> -->
-
-
-
-

@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
-import { BodyContentComponent } from './body-content/body-content.component';
+
 import { ProductListComponent } from './product-list/product-list.component';
 import { SearchBarComponent } from './product-list/search-bar/search-bar.component';
 import { FormsModule } from '@angular/forms';
@@ -28,11 +28,15 @@ import { IfDirective } from './CustomDirectives/if.directive';
 import { ForDirective } from './CustomDirectives/for.directive';
 import { AppNgForObjectDirective } from './CustomDirectives/app-ng-for-object.directive';
 import { TesterComponent } from './tester/tester.component';
+import { CapitaliseInitialsPipe } from './CustomPipes/capitalise-initials.pipe';
+import { ArrFormatPipe } from './CustomPipes/arr-format.pipe';
+import { CartComponent } from './product-list/cart/cart.component';
+import { showCartService } from './Services/showCart.service';
 
 @NgModule({
   declarations: [
     HeaderComponent,
-    BodyContentComponent,
+
     ProductListComponent,
     SearchBarComponent,
     AppComponent,
@@ -57,9 +61,12 @@ import { TesterComponent } from './tester/tester.component';
     ForDirective,
     AppNgForObjectDirective,
     TesterComponent,
+    CapitaliseInitialsPipe,
+    ArrFormatPipe,
+    CartComponent,
   ],
   imports: [BrowserModule, FormsModule],
-  providers: [],
+  providers: [showCartService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

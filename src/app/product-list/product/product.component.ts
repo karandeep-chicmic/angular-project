@@ -1,12 +1,18 @@
-import { Component, Input } from '@angular/core';
+import { Component, DoCheck, Input, inject } from '@angular/core';
 import { Product } from '../../Models/Product';
+import { showCartService } from 'src/app/Services/showCart.service';
 
 @Component({
   selector: 'app-product',
   templateUrl: './product.component.html',
   styleUrls: ['./product.component.css'],
 })
-export class ProductComponent {
+export class ProductComponent implements DoCheck {
+  showBool = inject(showCartService);
+  flag: boolean = true;
+  ngDoCheck(): void {
+    this.flag = !this.showBool.showCart;
+  }
   @Input() product: Product;
 
   calculateDiscount(product: any): number {

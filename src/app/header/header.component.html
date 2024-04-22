@@ -3,7 +3,11 @@
     <li *ngFor="let btn of btns">
       <a href="{{ btn.ref }}">{{ btn.name }}</a>
     </li>
-    <!-- <li><button #btnEle (click)="subscribe()">Alpha</button></li> -->
 
+    <li>
+      <button class="cart-button" (click)="showCart()">
+        {{ !showCartBool.showCart ? "Cart" : "Back" }}
+      </button>
+    </li>
   </ul>
 </nav>
